@@ -1,22 +1,24 @@
 
 const TIMEOUT = 200;
 
-const WIDTH = 28;
-const HEIGTH = 31;
+
 
 let score = 0;
 let gameUpdate;
 
 const map = new Map(MAP_DATA, WIDTH, HEIGTH);
 
-const player = new Player(28, 1, 6, map);
+const player = new Player(10, 14, 6, map);
 
 const coin = new Coin(11, 10, 7, map);
+
+const inteligentEnemy = new InteligentEnemy(14, 14, map);
 
 const enemies = [
     new Enemy(1, 1, map),
     new Enemy(1, 26, map),
     new Enemy(29, 26, map),
+    
 ]
 
 function start() {
@@ -30,23 +32,25 @@ function start() {
 function update(){
     enemies.forEach(j => j.update());
     player.update();
+    inteligentEnemy.update(player);
 
     if(coin.collide(player)){
         coin.updatePosition();
         score++;
     }
 
-    if(isGameOver()){
-        endGame();
-    }
+    // if(isGameOver()){
+    //     endGame();
+    // }
 }
 
 function render(){
     renderScore();
     map.render();
     coin.render();
-    enemies.forEach(j => j.render());
     player.render();
+    enemies.forEach(j => j.render());
+    inteligentEnemy.render()
 }
 
 function endGame(){
