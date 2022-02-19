@@ -2,7 +2,7 @@ const COLORS = ['#0D0E14', 'lightgray', '#FFEA47', '#FF621F', '#FF2921', '#3D3BD
 const SLOW_TIME = [2, 5, 10]
 const WIDTH = 28;
 const HEIGTH = 31;
-const TIMEOUT = 150;
+const TIMEOUT = 200;
 
 class Player {
 
@@ -186,11 +186,12 @@ function start() {
     renderMap();
     const gameUpdate = setInterval(() => {
         updateInimigosList();
-        renderMap();
-        renderInimigos();
         player.updatePlayer(map);
-        renderBlock(player);
+
+        renderMap();
         renderBlock(coin);
+        renderInimigos();
+        renderBlock(player);
 
         isCoinAdquired();
 
