@@ -25,8 +25,28 @@ class ExploredList{
         return this.width * x + y;
     }
 
+    getNode(x, y){
+        return this.arr[this.getIndex(x, y)];
+    }
+
     isExplored(x, y){
         return this.getCost(x, y) !== Infinity;
+    }
+
+    nextPosition(endX, endY){
+        let [currentX, currentY] = this.getNode(endX, endY)[1];
+        let [beforeX, beforeY] = [currentX, currentY];
+
+        while(!this.isStartNode(currentX, currentY)){
+            [beforeX, beforeY] = [currentX, currentY];
+            [currentX, currentY] = this.getParent(currentX, currentY); 
+        }
+        console.log("AAAA")
+        return [beforeX, beforeY]
+    }
+
+    isStartNode(x, y){
+        return this.getNode(x, y)[1] == null;
     }
 
     clean(){
@@ -53,16 +73,12 @@ function dijkstra(map, startX, startY, findX, findY){
     while(!pq.isEmpty()){
         const [cost, node, parent] = pq.pop();
 
-        if(explored.isExplored(...node)){
-            return;
-        }
-
         if(cost < explored.getCost(...node)){
             explored.setExplored(...node, cost, parent);
         }
 
         if(equals(...node, findX, findY)){
-            console.log("ACHOU")
+            console.log("ACHOU");
             return explored;
         }
 

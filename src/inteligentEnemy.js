@@ -26,7 +26,7 @@ class InteligentEnemy {
             return;
         }
         
-        // [this.x, this.y] = shortestPaths.nextPosition(player.x, player.y);
+        [this.x, this.y] = shortestPaths.nextPosition(player.x, player.y);
     }
 
     render() {
