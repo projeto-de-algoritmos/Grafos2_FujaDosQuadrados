@@ -2,11 +2,19 @@
     width: 25px;
     height: 25px;
     border: 1px gray solid;
+    text-align: center;
 }
+
 table {
     border-spacing: 0px;
     border: 2px black gray;
 }
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
 main {
     display: flex;
     width: 100%;

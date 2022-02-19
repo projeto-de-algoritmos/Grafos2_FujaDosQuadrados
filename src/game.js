@@ -9,9 +9,9 @@ let gameUpdate;
 
 const map = new Map(MAP_DATA, WIDTH, HEIGTH);
 
-const player = new Player(28, 1, 6, map);
+const player = new Player(28, 1, map);
 
-const coin = new Coin(11, 10, 7, map);
+const coin = new Coin(11, 10, map);
 
 const enemies = [
     new Enemy(1, 1, map),
@@ -22,26 +22,26 @@ const enemies = [
 function start() {
     map.render();
     gameUpdate = setInterval(() => {
-        update();        
+        update();
         render();
     }, TIMEOUT);
 }
 
-function update(){
+function update() {
     enemies.forEach(j => j.update());
     player.update();
 
-    if(coin.collide(player)){
+    if (coin.collide(player)) {
         coin.updatePosition();
         score++;
     }
 
-    if(isGameOver()){
+    if (isGameOver()) {
         endGame();
     }
 }
 
-function render(){
+function render() {
     renderScore();
     map.render();
     coin.render();
@@ -49,16 +49,16 @@ function render(){
     player.render();
 }
 
-function endGame(){
+function endGame() {
     console.log("Perdeu!")
     clearInterval(gameUpdate);
 }
 
-function isGameOver(){
+function isGameOver() {
     return enemies.find(e => e.collide(player));
 }
 
-function renderScore(){
+function renderScore() {
     window.document.querySelector("#score").innerHTML = score;
 }
 

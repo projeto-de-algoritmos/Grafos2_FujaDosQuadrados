@@ -46,6 +46,15 @@ class Map {
         block.style.backgroundColor = this.getColor(color);
     }
 
+    setImage(x, y, type) {
+        let block = window.document.querySelector(`#${this.getID(x, y)}`);
+
+        var image = document.createElement("img");
+        image.setAttribute("src", `./src/images/${type}.gif`);
+
+        block.appendChild(image);
+    }
+
     getSlow(x, y) {
         return SLOW_TIME[this.getBlock(x, y) - 2];
     }

@@ -1,10 +1,9 @@
 class Player {
 
-    constructor(x, y, color, map) {
+    constructor(x, y, map) {
         this.map = map;
         this.x = x;
         this.y = y;
-        this.color = color;
         this.slow = 0;
         this.vel = {
             x: 1,
@@ -35,14 +34,14 @@ class Player {
     }
 
     render() {
-        this.map.setColor(this.x, this.y, this.color);
+        this.map.setImage(this.x, this.y, "player");
     }
 
     nextPosition() {
         return [this.x + this.vel.x, this.y + this.vel.y];
     }
 
-    readKeys(){
+    readKeys() {
         document.addEventListener('keyup', (event) => {
             switch (event.code) {
                 case "ArrowUp":
