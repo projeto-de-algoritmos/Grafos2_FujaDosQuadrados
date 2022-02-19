@@ -57,7 +57,8 @@ function endGame() {
 }
 
 function isGameOver() {
-    return enemies.find(e => e.collide(player));
+    return enemies.find(e => e.collide(player))
+        || inteligentEnemy.collide(player);
 }
 
 function renderScore() {
