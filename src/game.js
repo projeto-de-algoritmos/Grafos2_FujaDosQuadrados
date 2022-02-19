@@ -1,12 +1,12 @@
 
-const TIMEOUT = 2000;
+const TIMEOUT = 350;
 
 let score = 0;
 let gameUpdate;
 
 const map = new Map(MAP_DATA, WIDTH, HEIGTH);
 
-const player = new Player(10, 14, 6, map);
+const player = new Player(29, 1, 6, map);
 
 const coin = new Coin(11, 10, 7, map);
 
@@ -37,9 +37,9 @@ function update(){
         score++;
     }
 
-    // if(isGameOver()){
-    //     endGame();
-    // }
+    if(isGameOver()){
+        endGame();
+    }
 }
 
 function render(){

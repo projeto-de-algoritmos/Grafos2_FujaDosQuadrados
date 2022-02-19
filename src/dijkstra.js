@@ -5,8 +5,6 @@ class ExploredList{
         this.arr = [];
         this.width = width;
         this.height = height;
-
-        
     }
 
     getCost(x, y){
@@ -34,14 +32,14 @@ class ExploredList{
     }
 
     nextPosition(endX, endY){
-        let [currentX, currentY] = this.getNode(endX, endY)[1];
+        let [currentX, currentY] = this.getParent(endX, endY);
         let [beforeX, beforeY] = [currentX, currentY];
 
         while(!this.isStartNode(currentX, currentY)){
             [beforeX, beforeY] = [currentX, currentY];
             [currentX, currentY] = this.getParent(currentX, currentY); 
         }
-        console.log("AAAA")
+        
         return [beforeX, beforeY]
     }
 
@@ -83,8 +81,8 @@ function dijkstra(map, startX, startY, findX, findY){
         }
 
         getAdj(...node, map, explored).forEach(adj => {
-            const cost = map.getSlow(...adj);
-            pq.push([cost, adj, node])
+            const newCost = cost + map.getSlow(...adj);
+            pq.push([newCost, adj, node])
         });
     }
 }
