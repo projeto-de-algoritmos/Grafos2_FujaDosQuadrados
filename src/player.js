@@ -14,17 +14,6 @@ class Player {
     update() {
         this.readKeys();
 
-        if (this.map.hasBlockSlow(this.x, this.y)) {
-            if (this.slow === 0) {
-                this.slow = this.map.getSlow(this.x, this.y);
-                return;
-            } else {
-                this.slow--;
-                if (this.slow > 0)
-                    return;
-            }
-        }
-
         if (!this.map.isBlockFree(...this.nextPosition())) {
             return;
         }

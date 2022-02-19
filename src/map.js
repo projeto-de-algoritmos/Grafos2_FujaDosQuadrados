@@ -1,4 +1,4 @@
-const COLORS = ['#0D0E14', 'lightgray', '#FFEA47', '#FF621F', '#FF2921', '#3D3BD9', '#943BD9', '#52ff6c']
+const COLORS = ['#0D0E14', 'lightgray', '#FFEA47', '#FF621F', '#FF2921', '#3D3BD9', '#943BD9', '#52ff6c', 'pink']
 const SLOW_TIME = [2, 5, 10]
 
 class Map {
@@ -14,6 +14,10 @@ class Map {
 
     hasBlockSlow(x, y) {
         return this.getBlock(x, y) > 1;
+    }
+
+    isWithinBounds(x, y){
+        return x >= 0 && x < this.height && y >= 0 && y < this.width
     }
 
     render() {
@@ -56,6 +60,9 @@ class Map {
     }
 
     getSlow(x, y) {
+        if(map.data[x][y] == 1)
+            return 1;
         return SLOW_TIME[this.getBlock(x, y) - 2];
     }
+
 }
