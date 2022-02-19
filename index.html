@@ -1,27 +1,19 @@
 <html>
-<style>
-    .celula {
-        width: 25px;
-        height: 25px;
-        border: 1px gray solid;
-    }
-    table {
-        border-spacing: 0px;
-        border: 2px black gray;
-    }
-    #game {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
-
+    <link rel="stylesheet" href="./styles.css" />
 <body>
-    <div id="game"></div>
-    <script src="map.js"></script>
-    <script src="game.js"></script>
+    
+    <main>
+        <h2>Score: <span id="score"></span></h2>
+        <div id="game"></div>
+    </main>
+    
+    <script src="./src/utils.js"></script>
+    <script src="./src/mapData.js"></script>
+    <script src="./src/map.js"></script>
+    <script src="./src/coin.js"></script>
+    <script src="./src/enemy.js"></script>
+    <script src="./src/player.js"></script>
+    <script src="./src/game.js"></script>
 </body>
 
 </html>
