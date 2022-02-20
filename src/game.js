@@ -74,11 +74,11 @@ function renderScore() {
 }
 
 function startGame() {
-    let btn = document.querySelector('#playBtn');
+    let btn = document.querySelector('#initialScreen');
 
     btn.onclick = (event) => {
-        window.document.querySelector("#playBtn").classList.remove("actived")
-        window.document.querySelector("#playBtn").classList.add("disabled")
+        window.document.querySelector("#initialScreen").classList.remove("actived")
+        window.document.querySelector("#initialScreen").classList.add("disabled")
         music.volume = VOLUME;
         music.play();
         start();
