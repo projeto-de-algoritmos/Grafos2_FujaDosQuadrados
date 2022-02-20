@@ -1,11 +1,18 @@
 <html>
-<link rel="stylesheet" href="./styles.css" />
-
+    <link href="http://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
 <body>
 
-    <main>
+    <header>
+        <div id="lost" class="disabled">
+            <h1 >Voce perdeu!</h1>
+            <button onclick="window.location.reload()">Tentar Novamente</button>
+        </div>
         <h2>Score: <span id="score"></span></h2>
-        <div id="game"></div>
+    </header>
+
+    <main>
+        <table id="game"></table>
     </main>
 
     <audio src="./src/music/music1.mp3"></audio>

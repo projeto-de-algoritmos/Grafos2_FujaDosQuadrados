@@ -21,7 +21,7 @@ class Map {
     }
 
     render() {
-        let html = '<table>'
+        let html = ''
         for (let row = 0; row < this.height; row++) {
             html += '<tr>'
             for (let column = 0; column < this.width; column++) {

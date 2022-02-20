@@ -52,7 +52,7 @@ function render() {
 }
 
 function endGame() {
-    console.log("Perdeu!")
+    window.document.querySelector("#lost").classList.add("actived")
     clearInterval(gameUpdate);
 }
 
