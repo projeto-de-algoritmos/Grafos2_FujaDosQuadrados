@@ -1,5 +1,6 @@
 
 const TIMEOUT = 300;
+const VOLUME = 0.3;
 
 let score = 0;
 let gameUpdate;
@@ -12,6 +13,10 @@ const coin = new Coin(11, 10, map);
 
 const inteligentEnemy = new InteligentEnemy(14, 14, map);
 
+const songs = [document.getElementById('music1'), document.getElementById('music2'), document.getElementById('music3')];
+const music = songs[getRandomInt(0, 3)];
+const lostSong = document.getElementById('lostSong');
+
 const enemies = [
     new Enemy(1, 1, map),
     new Enemy(1, 26, map),
@@ -19,7 +24,7 @@ const enemies = [
 
 ]
 
-function start() {
+function start(hasStarted) {
     map.render();
     gameUpdate = setInterval(() => {
         update();
@@ -53,6 +58,9 @@ function render() {
 
 function endGame() {
     window.document.querySelector("#lost").classList.add("actived")
+    music.pause();
+    lostSong.volume = VOLUME;
+    lostSong.play();
     clearInterval(gameUpdate);
 }
 
@@ -65,4 +73,16 @@ function renderScore() {
     window.document.querySelector("#score").innerHTML = score;
 }
 
-start()
+function startGame() {
+    let btn = document.querySelector('#playBtn');
+
+    btn.onclick = (event) => {
+        window.document.querySelector("#playBtn").classList.remove("actived")
+        window.document.querySelector("#playBtn").classList.add("disabled")
+        music.volume = VOLUME;
+        music.play();
+        start();
+    };
+}
+
+startGame()

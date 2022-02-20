@@ -43,7 +43,7 @@ button {
 }
 
 .actived {
-    display: block;
+    display: inline-block;
 }
 
 body {

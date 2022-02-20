@@ -1,13 +1,15 @@
 <html>
-    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css" />
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css" />
+
 <body>
 
     <header>
         <div id="lost" class="disabled">
-            <h1 >Voce perdeu!</h1>
+            <h1>Voce perdeu!</h1>
             <button onclick="window.location.reload()">Tentar Novamente</button>
         </div>
+        <button id="playBtn" class="actived">Play</button>
         <h2>Score: <span id="score"></span></h2>
     </header>
 
@@ -15,7 +17,10 @@
         <table id="game"></table>
     </main>
 
-    <audio src="./src/music/music1.mp3"></audio>
+    <audio id="music1" src="./src/music/music1.mp3"></audio>
+    <audio id="music2" src="./src/music/music2.mp3"></audio>
+    <audio id="music3" src="./src/music/music3.mp3"></audio>
+    <audio id="lostSong" src="./src/music/lost.mp3"></audio>
     <script src="./src/utils.js"></script>
     <script src="./src/heappq.js"></script>
     <script src="./src/mapData.js"></script>
