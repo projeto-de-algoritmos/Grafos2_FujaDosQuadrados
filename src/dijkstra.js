@@ -90,10 +90,6 @@ function dijkstra(map, startX, startY, findX, findY){
     }
 }
 
-function equals(x1, y1, x2, y2){
-    return x1 === x2 && y1 === y2;
-}
-
 const ADJ_POINTS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
 
 function getAdj(x, y, map, explored){
@@ -105,6 +101,4 @@ function getCostPQ(elemPQ){
     return elemPQ[0];
 }
 
-function add(p1, p2){
-    return [p1[0] + p2[0], p1[1] + p2[1]]
-}
+

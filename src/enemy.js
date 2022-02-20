@@ -1,3 +1,5 @@
+const POSSIBLE_PATHS = [[0, 1], [0, -1], [1, 0], [-1, 0]];
+
 
 class Enemy {
     constructor(x, y, map) {
@@ -23,29 +25,25 @@ class Enemy {
                     return;
             }
         }
-        if (this.countPossiblePaths() > 2) {
-            [this.vel.x, this.vel.y] = randomVelocity();
+
+        const possiblePaths = this.getPossiblePaths();
+        if(possiblePaths.length > 2){
+            const inverseVel = [-this.vel.x, -this.vel.y];
+            [this.vel.x, this.vel.y] = randomPath(possiblePaths.filter(p => !equals(...p, ...inverseVel)));
         }
 
-        while (!map.isBlockFree(...this.nextPosition())) {
+        while (!this.map.isBlockFree(...this.nextPosition())) {
             [this.vel.x, this.vel.y] = randomVelocity();
         }
 
         [this.x, this.y] = this.nextPosition();
     }
 
-    countPossiblePaths() {
-        let paths = 0;
-        if (this.map.isBlockFree(this.x + 1, this.y))
-            paths++;
-        if (this.map.isBlockFree(this.x - 1, this.y))
-            paths++;
-        if (this.map.isBlockFree(this.x, this.y + 1))
-            paths++;
-        if (this.map.isBlockFree(this.x, this.y - 1))
-            paths++;
-
-        return paths;
+    getPossiblePaths() {
+        return POSSIBLE_PATHS
+            .map(p => add(p, [this.x, this.y]))
+            .filter(p => this.map.isBlockFree(...p))
+            .map((p, index) => POSSIBLE_PATHS[index]);
     }
 
     render() {
@@ -64,4 +62,8 @@ class Enemy {
 function randomVelocity() {
     const randomVel = getRandomBool() ? 1 : -1;
     return getRandomBool() ? [0, randomVel] : [randomVel, 0];
+}
+
+function randomPath(paths){
+    return paths[getRandomInt(0, paths.length)];
 }
