@@ -30,7 +30,7 @@ main {
 header {
     width: 100%;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 button {
@@ -44,4 +44,8 @@ button {
 
 .actived {
     display: block;
+}
+
+body {
+    background-color: whitesmoke;
 }

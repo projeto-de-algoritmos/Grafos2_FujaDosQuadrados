@@ -1,5 +1,5 @@
 
-const TIMEOUT = 350;
+const TIMEOUT = 300;
 
 let score = 0;
 let gameUpdate;
