@@ -25,6 +25,7 @@ main {
 
 #game {
     margin: auto;
+    box-shadow: 0 0 2em black;
 }
 
 header {
@@ -47,5 +48,5 @@ button {
 }
 
 body {
-    background-color: whitesmoke;
+    background-image: linear-gradient(whitesmoke, lightgray, grey);
 }
