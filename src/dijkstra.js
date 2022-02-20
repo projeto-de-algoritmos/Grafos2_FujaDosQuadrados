@@ -35,11 +35,14 @@ class ExploredList{
         let [currentX, currentY] = this.getParent(endX, endY);
         let [beforeX, beforeY] = [currentX, currentY];
 
+        if(this.isStartNode(currentX, currentY)){
+            return [endX, endY];
+        }
+
         while(!this.isStartNode(currentX, currentY)){
             [beforeX, beforeY] = [currentX, currentY];
             [currentX, currentY] = this.getParent(currentX, currentY); 
         }
-        
         return [beforeX, beforeY]
     }
 
