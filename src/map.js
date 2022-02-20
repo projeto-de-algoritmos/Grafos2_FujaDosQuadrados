@@ -16,7 +16,7 @@ class Map {
         return this.getBlock(x, y) > 1;
     }
 
-    isWithinBounds(x, y){
+    isWithinBounds(x, y) {
         return x >= 0 && x < this.height && y >= 0 && y < this.width
     }
 
@@ -53,14 +53,11 @@ class Map {
     setImage(x, y, type) {
         let block = window.document.querySelector(`#${this.getID(x, y)}`);
 
-        var image = document.createElement("img");
-        image.setAttribute("src", `./src/images/${type}.gif`);
-
-        block.appendChild(image);
+        block.innerHTML = `<img src="./src/images/${type}.gif" />`;
     }
 
     getSlow(x, y) {
-        if(map.data[x][y] == 1)
+        if (map.data[x][y] == 1)
             return 1;
         return SLOW_TIME[this.getBlock(x, y) - 2];
     }

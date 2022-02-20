@@ -19,21 +19,21 @@ class InteligentEnemy {
                     return;
             }
         }
-        
+
         const shortestPaths = dijkstra(map, this.x, this.y, player.x, player.y);
 
-        if(shortestPaths === undefined){
+        if (shortestPaths === undefined) {
             return;
         }
-        
+
         [this.x, this.y] = shortestPaths.nextPosition(player.x, player.y);
     }
 
     render() {
-        this.map.setColor(this.x, this.y, this.color);
+        this.map.setImage(this.x, this.y, "enemy2");
     }
 
-    collide(obj){
+    collide(obj) {
         return hasCollided(this, obj);
     }
 }

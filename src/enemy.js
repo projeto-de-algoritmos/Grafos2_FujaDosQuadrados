@@ -49,14 +49,14 @@ class Enemy {
     }
 
     render() {
-        this.map.setColor(this.x, this.y, this.color);
+        this.map.setImage(this.x, this.y, "enemy");
     }
 
     nextPosition() {
         return [this.x + this.vel.x, this.y + this.vel.y];
     }
 
-    collide(obj){
+    collide(obj) {
         return hasCollided(this, obj);
     }
 }
