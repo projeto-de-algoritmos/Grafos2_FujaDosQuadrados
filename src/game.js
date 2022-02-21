@@ -1,6 +1,10 @@
 
 const TIMEOUT = 300;
-const VOLUME = 0.3;
+const VOLUME = 0.1;
+
+const songs = [document.getElementById('music2'), document.getElementById('music3')];
+const music = songs[getRandomInt(0, 2)];
+const lostSong = document.getElementById('lostSong');
 
 let score = 0;
 let gameUpdate;
@@ -13,15 +17,11 @@ const coin = new Coin(11, 10, map);
 
 const inteligentEnemy = new InteligentEnemy(14, 14, map);
 
-const songs = [document.getElementById('music1'), document.getElementById('music2'), document.getElementById('music3')];
-const music = songs[getRandomInt(0, 3)];
-const lostSong = document.getElementById('lostSong');
 
 const enemies = [
     new Enemy(1, 1, map),
     new Enemy(1, 26, map),
     new Enemy(29, 26, map),
-
 ]
 
 function start(hasStarted) {

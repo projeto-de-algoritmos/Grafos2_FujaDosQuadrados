@@ -7,7 +7,6 @@ class Enemy {
         this.x = x;
         this.y = y;
         this.slow = 0,
-            this.color = 5,
             this.vel = {
                 x: 1,
                 y: 0,
@@ -27,7 +26,7 @@ class Enemy {
         }
 
         const possiblePaths = this.getPossiblePaths();
-        if(possiblePaths.length > 2){
+        if (possiblePaths.length > 2) {
             const inverseVel = [-this.vel.x, -this.vel.y];
             [this.vel.x, this.vel.y] = randomPath(possiblePaths.filter(p => !equals(...p, ...inverseVel)));
         }
@@ -64,6 +63,6 @@ function randomVelocity() {
     return getRandomBool() ? [0, randomVel] : [randomVel, 0];
 }
 
-function randomPath(paths){
+function randomPath(paths) {
     return paths[getRandomInt(0, paths.length)];
 }

@@ -5,7 +5,6 @@ class InteligentEnemy {
         this.x = x;
         this.y = y;
         this.slow = 0;
-        this.color = 8;
     }
 
     update(player) {
