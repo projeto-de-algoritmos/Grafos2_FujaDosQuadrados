@@ -18,6 +18,11 @@ img {
     height: 20px;
 }
 
+#hoglin {
+    width: 400;
+    height: 400;
+}
+
 main {
     width: 100%;
     text-align: center;

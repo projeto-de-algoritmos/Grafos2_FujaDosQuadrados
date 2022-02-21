@@ -13,16 +13,16 @@
 O labirinto do Hoglin utliza o algoritmo de Dijkstra para que o Hoglin encontre o jogador no menor caminho possível, enquanto as cabras utilizam um algoritmo que escolhe caminhos aleatórios.
 
 ## Screenshots
-<img src="src/images/telaInicial.png" width="720" height="576" />
+<img src="src/images/telaInicial.png"/>
 
-<img src="src/images/telaJogo.png" width="720" height="576" />
+<img src="src/images/telaJogo.png"/>
 
-<img src="src/images/telaGameOver.png" width="720" height="576" />
+<img src="src/images/telaGameOver.png"/>
 
 ## Instalação 
 **Linguagem**: Javascript<br>
 **Pré-requisitos**: Navegador Web<br>
 
 ## Uso 
-Para utilizar o projeto acesse:
-ou abra o arquivo ´index.html´ no navega web de sua preferência
+Para utilizar o projeto acesse: https://labirinto-do-hoglin.herokuapp.com/
+ou abra o arquivo ´index.html´ no navegador web de sua preferência
