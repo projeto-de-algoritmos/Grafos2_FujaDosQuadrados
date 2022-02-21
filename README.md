@@ -22,15 +22,15 @@ O labirinto do Hoglin utliza o algoritmo de Dijkstra para que o Hoglin encontre 
 
 <hr>
 
-## Demonstração
+## Demonstração  <img src="https://www.shareicon.net/data/2017/01/23/874891_speaker_512x512.png" width="25" />
 
-[Video da Demonstração](/videos/demo.mp4)
+https://user-images.githubusercontent.com/54081877/155039237-cb2cddb5-45e5-4c7f-a1d2-ca8c8f184757.mp4
 
 <hr>
 
 ## Apresentação
 
-[Video da Apresentação](/videos/apresentacao.mp4)
+[Video da Apresentação](https://github.com/projeto-de-algoritmos/Grafos2_LabirintoDoHoglin/blob/master/videos/apresentacao.mp4)
 
 <hr>
 
