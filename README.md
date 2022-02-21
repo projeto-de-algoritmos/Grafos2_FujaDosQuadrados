@@ -1,45 +1,28 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Labirinto do Hoglin
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 2<br>
+**Conteúdo da Disciplina**: Grafos2<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0025379 |  Brenno Oliveira Silva |
+| 19/0020377 |  Thiago Sampaio de Paiva |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O labirinto do Hoglin utliza o algoritmo de Dijkstra para que o Hoglin encontre o jogador no menor caminho possível, enquanto as cabras utilizam um algoritmo que escolhe caminhos aleatórios.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+<img src="src/images/telaInicial.png" width="720" height="576" />
+
+<img src="src/images/telaJogo.png" width="720" height="576" />
+
+<img src="src/images/telaGameOver.png" width="720" height="576" />
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Javascript<br>
+**Pré-requisitos**: Navegador Web<br>
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
-
-
+Para utilizar o projeto acesse:
+ou abra o arquivo ´index.html´ no navega web de sua preferência
