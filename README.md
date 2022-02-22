@@ -39,7 +39,15 @@ https://user-images.githubusercontent.com/54081877/155039237-cb2cddb5-45e5-4c7f-
 **Pré-requisitos**: Navegador Web<br>
 
 <hr>
+
 ## Uso 
 
 Para utilizar o projeto acesse: [https://labirinto-do-hoglin.herokuapp.com/](https://labirinto-do-hoglin.herokuapp.com/)
 ou abra o arquivo ´index.html´ no navegador web de sua preferência
+<hr>
+
+## Referências
+
+- Fila de Prioridades: [Efficient way to implement Priority Queue in Javascript?](https://stackoverflow.com/a/42919752)
+- Game Render: [Tutorial completo de como programar o Fogo do DOOM (JavaScript puro)](https://www.youtube.com/watch?v=fxm8cadCqbs)
+
